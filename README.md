@@ -1,2 +1,3 @@
 # meishi-golang
-Portfolio and business card.
+Визитная карточка Андрей Волжин. Код на Golang.
+
