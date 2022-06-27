@@ -1,0 +1,10 @@
+#port this application
+port: "8005"
+
+#configuration to connect database
+db:
+  host:     "localhost"
+  port:     "5432"
+  username: "eggstars048773"
+  dbname:   "meishipg048883"
+  sslmode:  "disable"
