@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 	"github.com/sirupsen/logrus"
@@ -32,6 +33,8 @@ func main() {
 		logrus.Fatalf("error loading env variables: %s", err.Error())
 	}
 
+	fmt.Println(`dfsdf`)
+
 	//swagger config
 	docs.SwaggerInfo.Title = "Документация REST API"
 	docs.SwaggerInfo.Description = "Описание методов взаимодействия с api."
@@ -49,6 +52,8 @@ func main() {
 		DBName:   viper.GetString("db.dbname"),
 		SSLMode:  viper.GetString("db.sslmode"),
 	})
+	var s []string
+	s = append(s, "d")
 	if err != nil {
 		logrus.Fatalf("filed to init DB: %s", err.Error())
 	}

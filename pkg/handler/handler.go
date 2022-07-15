@@ -25,10 +25,15 @@ func (h *Handler) RoutingInitialization() *gin.Engine {
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	v1 := router.Group("/api/v1")
 	{
-		user := v1.Group("/user")
+		auth := v1.Group("/auth")
 		{
-			user.POST("/sign-up")
+			auth.POST("/sign-up", h.signUp) //регистрация
 		}
+		geo := v1.Group("/dadata", h.userIdentity)
+		{
+			geo.POST("/geo", h.getGeoCodePost) //подсказка адреса при наборе
+		}
+		//many endpoints...
 	}
 	return router
 }
